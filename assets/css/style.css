@@ -1,0 +1,512 @@
+/* PALETA Y VARIABLES (colores tipo imagen) */
+:root {
+  --bg-main: #050816;
+  --bg-nav: #050816;
+  --bg-panel: #091021;
+  --bg-panel-soft: #10182d;
+  --bg-green: #2aa22f;
+  --bg-green-soft: #3bbf42;
+  --accent: #ffc432;
+  --accent-soft: #ffe07f;
+  --text-main: #f8f9fa;
+  --text-muted: #b3b8c4;
+
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-round: 999px;
+}
+
+/* BASE GENERAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* igual a la altura del navbar */
+}
+
+body {
+  margin: 0;
+  padding-top: 0 !important;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* NAVBAR */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.main-navbar {
+  background-color: rgba(5, 8, 22, 0.98);
+  padding-block: 0.9rem;
+}
+
+.logo-text {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.logo-text span {
+  color: var(--accent);
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-inline: 0.85rem;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--accent);
+}
+
+/* Botón principal */
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #202020;
+  border-radius: 999px;
+  padding-inline: 1.5rem;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-soft);
+  border-color: var(--accent-soft);
+  color: #202020;
+}
+
+.hero-secondary-btn {
+  border-radius: 999px;
+}
+
+/* HERO */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
+}
+
+.hero-content {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+/* Fondo estadio (puedes sustituir por una foto real) */
+.stadium-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/estadio.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  z-index: -2;
+}
+
+/* Capa oscura suave */
+.hero-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at 10% 0,
+      rgba(255, 255, 255, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(to bottom, rgba(5, 8, 22, 0.3), #050816 65%);
+  z-index: -1;
+}
+
+/* Contenido hero */
+.hero-content {
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+
+.hero-tag {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.6rem, 3vw + 1.2rem, 3.8rem);
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.hero-title span {
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+}
+
+/* Badges */
+/* TARJETAS HERO */
+.hero-badge {
+  background-color: rgba(5, 8, 22, 0.65);
+  border-radius: 1.5rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 190px; /* Más anchas */
+  min-height: 90px; /* Más altas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ícono  */
+.icon-hero {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-right: 0.25rem;
+}
+
+/* Título dentro de badge */
+.hero-badge .badge-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+/* Texto debajo */
+.hero-badge p {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--text-main);
+}
+
+/* Jugador */
+.hero-player-wrapper {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-player-img {
+  max-height: 460px;
+  width: auto;
+  transform: translateY(20px);
+}
+
+/* Franja verde inferior tipo cancha */
+.hero-field-strip {
+  background: linear-gradient(
+    180deg,
+    var(--bg-green) 0%,
+    var(--bg-green-soft) 100%
+  );
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin-top: -4.5rem;
+}
+
+.field-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.field-text {
+  font-size: 0.95rem;
+}
+
+/* mismo porte para las 4 */
+.field-pill {
+  border-radius: var(--radius-round);
+  background-color: rgba(0, 0, 0, 0.16);
+  color: #f7f7f7;
+  font-size: 0.85rem;
+  padding: 0.45rem 1rem;
+  text-align: center;
+  white-space: nowrap;
+
+  /* ESTE BLOQUE IGUALA EL TAMAÑO */
+  flex: 1 1 0;
+  min-width: 150px;
+}
+
+/* CUENTA REGRESIVA */
+.countdown-card {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lg);
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(4px);
+  background-color: rgba(5, 8, 22, 0.9);
+  border-radius: 1.5rem;
+  padding: 1.8rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.countdown-label {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.countdown-values {
+  margin-top: 0.5rem;
+}
+
+.countdown-item {
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.countdown-unit {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* Un pequeño hover opcional */
+.countdown-item:hover .countdown-number {
+  color: var(--accent);
+}
+
+/* SECCIONES GENERALES */
+.section-padding {
+  padding-block: 2rem;
+}
+
+.section-dark {
+  background: radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.05),
+      transparent 50%
+    ),
+    #050816;
+}
+
+.section-dark-bottom {
+  background-color: #050816;
+  padding-bottom: 4.5rem;
+}
+
+.section-green {
+  background: linear-gradient(
+    180deg,
+    rgba(42, 162, 47, 0.9),
+    rgba(5, 8, 22, 0.98)
+  );
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 0.98rem;
+}
+
+/* CARDS INFO */
+.info-card {
+  background-color: var(--bg-panel);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.5rem;
+}
+
+.info-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.info-card-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* PREMIOS */
+.prize-card {
+  background-color: rgba(5, 8, 22, 0.92);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.2rem 1.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.prize-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 0.8rem;
+  background: radial-gradient(circle at 30% 20%, #ffffff, #bfbfbf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prize-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prize-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.prize-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Hover suave para los premios */
+.prize-card {
+  transition: all 0.3s ease;
+}
+
+.prize-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* SPONSORS */
+.sponsor-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.sponsor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajuste de logos */
+.sponsor-logo {
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0.95);
+  transition: 0.25s ease-in-out;
+}
+/* Hover del logo */
+.sponsor-card:hover .sponsor-logo {
+  filter: brightness(1);
+  transform: scale(1.05);
+}
+
+/* FORMULARIO */
+.inscription-card {
+  background-color: var(--bg-panel-soft);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inscription-card .form-label {
+  font-size: 0.9rem;
+}
+
+.inscription-card .form-control,
+.inscription-card .form-select,
+.inscription-card textarea {
+  background-color: rgba(5, 8, 22, 0.9);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: var(--text-main);
+}
+
+.inscription-card .form-control:focus,
+.inscription-card .form-select:focus,
+.inscription-card textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.18rem rgba(255, 196, 50, 0.35);
+}
+
+.inscription-card .form-control::placeholder,
+.inscription-card textarea::placeholder {
+  color: #6f7581;
+}
+
+#formMessage.text-success {
+  color: #3adb7a !important;
+}
+
+#formMessage.text-danger {
+  color: #ff6b6b !important;
+}
+
+/* FOOTER */
+.main-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-block: 1.2rem;
+  background-color: #050816;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991.98px) {
+  .hero-content {
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+    text-align: center;
+  }
+
+  .hero-badges {
+    justify-content: center;
+  }
+
+  .hero-field-strip {
+    margin-top: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .inscription-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
