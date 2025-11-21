@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Copa Escolar Metropolitana: campeonato de fútbol entre colegios de la Región Metropolitana."
+    />
+
+    <title>Copa Escolar Metropolitana</title>
+
+    <!-- Google Font  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Estilos propios -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- BARRA SUPERIOR / NAV -->
+    <header class="main-header">
+      <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
+        <div class="container">
+          <a class="navbar-brand fw-bold logo-text" href="#inicio">
+            Copa Escolar <span>RM</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar"
+            aria-controls="mainNavbar"
+            aria-expanded="false"
+            aria-label="Menú"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#campeonato">Campeonato</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#formatos">Formato</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#premios">Premios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#sponsors">Sponsors</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="btn btn-accent ms-lg-3 fw-semibold"
+                  href="#inscripcion"
+                >
+                  Inscribir colegio
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+      <!-- HERO PRINCIPAL -->
+      <section id="inicio" class="hero-section position-relative">
+        <div class="stadium-bg"></div>
+        <div class="hero-overlay-dark"></div>
+
+        <div class="container hero-content position-relative">
+          <div class="row align-items-center gy-4">
+            <!-- Columna texto -->
+            <div class="col-lg-7">
+              <p class="hero-tag mb-2">
+                Campeonato escolar · Región Metropolitana
+              </p>
+
+              <h1 class="hero-title mb-3">
+                Copa Escolar<br />
+                Metropolitana <span>2025</span>
+              </h1>
+
+              <p class="hero-subtitle mb-4">
+                Inscribe a tu colegio en un torneo pensado para los equipos
+                escolares: <strong>mínimo 4 partidos garantizados</strong>,
+                ambiente familiar y experiencia profesional.
+              </p>
+
+              <div
+                class="col-12 d-flex flex-column flex-md-row justify-content-start mb-4 gap-3 mt-3"
+              >
+                <a
+                  href="#inscripcion"
+                  class="btn btn-accent btn-lg fw-semibold"
+                >
+                  Inscribir ahora
+                </a>
+                <a
+                  href="#campeonato"
+                  class="btn btn-outline-light btn-lg hero-secondary-btn"
+                >
+                  Ver detalles
+                </a>
+              </div>
+
+              <div class="d-flex flex-wrap hero-badges gap-2">
+                <div
+                  class="hero-badge d-flex flex-column justify-content-center"
+                >
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-people-fill me-1 text-accent"></i>
+                    <span class="badge-label">Categorías</span>
+                  </div>
+                  <p class="mb-0 small">Sub-12 · Sub-14 · Sub-16</p>
+                </div>
+                <div
+                  class="hero-badge d-flex flex-column justify-content-center"
+                >
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-diagram-3-fill me-1 text-accent"></i>
+                    <span class="badge-label">Formato</span>
+                  </div>
+                  <p class="mb-0 small">Grupos + Playoffs</p>
+                </div>
+                <div
+                  class="hero-badge d-flex flex-column justify-content-center"
+                >
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <i class="bi bi-geo-alt-fill me-1 text-accent"></i>
+                    <span class="badge-label">Sede</span>
+                  </div>
+                  <p class="mb-0 small">Santiago · RM</p>
+                </div>
+                <section id="cuenta-regresiva" class="mb-4 gap-3 mt-3">
+                  <div class="countdown-card text-center mx-auto">
+                    <p class="countdown-label mb-2">Inicio del campeonato en</p>
+
+                    <div
+                      class="d-flex justify-content-center gap-3 flex-wrap countdown-values"
+                    >
+                      <div class="countdown-item">
+                        <span id="cd-days" class="countdown-number">00</span>
+                        <span class="countdown-unit">Días</span>
+                      </div>
+                      <div class="countdown-item">
+                        <span id="cd-hours" class="countdown-number">00</span>
+                        <span class="countdown-unit">Horas</span>
+                      </div>
+                      <div class="countdown-item">
+                        <span id="cd-minutes" class="countdown-number">00</span>
+                        <span class="countdown-unit">Min</span>
+                      </div>
+                      <div class="countdown-item">
+                        <span id="cd-seconds" class="countdown-number">00</span>
+                        <span class="countdown-unit">Seg</span>
+                      </div>
+                    </div>
+
+                    <p id="cd-message" class="small text-muted mt-3"></p>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <!-- Columna jugador -->
+            <div class="col-lg-5 d-none d-lg-block">
+              <div class="hero-player-wrapper">
+                <img
+                  src="assets/images/jugador.png"
+                  alt="Jugador de fútbol en cancha de estadio"
+                  class="hero-player-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Franja verde tipo cancha -->
+        <div class="hero-field-strip">
+          <div class="container py-4">
+            <div class="row align-items-center g-4">
+              <div class="col-lg-7">
+                <h2 class="field-title mb-2">
+                  Fútbol escolar con enfoque formativo
+                </h2>
+                <p class="field-text mb-0">
+                  Cada colegio participa con sus selecciones oficiales. Se
+                  asegura una cantidad mínima de partidos por equipo para que
+                  todos vivan la experiencia completa del campeonato.
+                </p>
+              </div>
+              <div class="col-lg-5">
+                <div class="d-flex flex-wrap gap-3 justify-content-lg-end">
+                  <div class="field-pill">Torneo de invierno</div>
+                  <div class="field-pill">Torneo de primavera</div>
+                  <div class="field-pill">Árbitros certificados</div>
+                  <div class="field-pill">Cobertura multimedia</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: FORMATO / CARDS TIPO BLOQUES -->
+      <section id="formatos" class="section-padding section-dark">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="section-title">Formato del campeonato</h2>
+            <p class="section-subtitle">
+              Una estructura pensada para que ningún equipo quede fuera en el
+              primer partido.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-4">
+              <article class="info-card h-100">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-grid-3x3-gap-fill text-accent fs-4"></i>
+                  <h3 class="info-card-title mb-0">Fase de grupos</h3>
+                </div>
+                <p class="info-card-text">
+                  Equipos organizados en grupos por categoría. Todos se
+                  enfrentan entre sí, sumando puntos por triunfo y empate.
+                </p>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="info-card h-100">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-trophy-fill text-accent fs-2 mb-2"></i>
+                  <h3 class="info-card-title">Playoffs</h3>
+                </div>
+                <p class="info-card-text">
+                  Los mejores pasan a cuartos, semifinales y final. Se incluye
+                  partido por tercer lugar en cada categoría.
+                </p>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="info-card h-100">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-stopwatch-fill text-accent fs-2 mb-2"></i>
+                  <h3 class="info-card-title">Minutos garantizados</h3>
+                </div>
+                <p class="info-card-text">
+                  Cada equipo juega varios partidos antes de la eliminación,
+                  privilegiando la participación y el juego limpio.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: PREMIOS (CÍRCULOS TIPO BALONES) -->
+      <section id="premios" class="section-padding section-green">
+        <div class="container">
+          <div class="text-center mb-5">
+            <h2 class="section-title">Premios y reconocimientos</h2>
+            <p class="section-subtitle">
+              Trofeos, medallas y distinciones individuales para destacar el
+              esfuerzo de los equipos.
+            </p>
+          </div>
+
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+              <div class="prize-card text-center">
+                <div class="prize-icon">
+                  <img src="assets/images/medalla.webp" alt="Balón de fútbol" />
+                </div>
+                <h3 class="prize-title">Medallas por jugador</h3>
+                <p class="prize-text">
+                  Medallas para planteles campeón, subcampeón y tercer lugar.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="prize-card text-center">
+                <div class="prize-icon">
+                  <img src="assets/images/copa.jpg" alt="Premio" />
+                </div>
+                <h3 class="prize-title">Copa campeonato</h3>
+                <p class="prize-text">
+                  Trofeo oficial para el colegio campeón.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="prize-card text-center">
+                <div class="prize-icon">
+                  <img src="assets/images/guante.jpg" alt="Balón de fútbol" />
+                </div>
+                <h3 class="prize-title">Distinciones individuales</h3>
+                <p class="prize-text">
+                  Goleador, mejor arquero y premio fair play por categoría.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: SPONSORS -->
+      <section id="sponsors" class="section-padding section-dark">
+        <div class="container">
+          <div class="text-center mb-4">
+            <h2 class="section-title">Sponsors y aliados</h2>
+            <p class="section-subtitle">
+              Marcas que apoyan el deporte escolar y la vida saludable.
+            </p>
+          </div>
+
+          <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-3">
+              <div class="sponsor-card">
+                <img
+                  src="assets/images/sponsors/redbullenergydrink.svg"
+                  alt="redbullenergydrink"
+                  class="img-fluid sponsor-logo"
+                />
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="sponsor-card">
+                <img
+                  src="assets/images/sponsors/adidas.svg"
+                  alt="Adidas"
+                  class="img-fluid sponsor-logo"
+                />
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="sponsor-card">
+                <img
+                  src="assets/images/sponsors/banco-santander-logo.svg"
+                  alt="banco-santander"
+                  class="img-fluid sponsor-logo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN: FORMULARIO INSCRIPCIÓN -->
+      <section id="inscripcion" class="section-padding section-dark-bottom">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7">
+              <div class="inscription-card">
+                <h2 class="section-title mb-3">Inscribir mi colegio</h2>
+                <p class="section-subtitle mb-4">
+                  Completa el formulario y recibirás por correo las bases,
+                  valores y calendario del campeonato.
+                </p>
+
+                <form id="inscriptionForm" novalidate>
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="colegio" class="form-label">
+                        Nombre del colegio
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="colegio"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Ingresa el nombre del colegio.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="comuna" class="form-label">Comuna</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="comuna"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Indica la comuna del establecimiento.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="categoria" class="form-label">
+                        Categoría principal
+                      </label>
+                      <select id="categoria" class="form-select" required>
+                        <option value="">Seleccionar…</option>
+                        <option>Sub-12</option>
+                        <option>Sub-14</option>
+                        <option>Sub-16</option>
+                        <option>Mixto amistoso</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Selecciona una categoría.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="nombreContacto" class="form-label">
+                        Nombre de contacto
+                      </label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="nombreContacto"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Ingresa el nombre de la persona responsable.
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">
+                        Correo electrónico
+                      </label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        required
+                      />
+                      <div class="invalid-feedback">
+                        Ingresa un correo válido.
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="mensaje" class="form-label">
+                        Mensaje adicional (opcional)
+                      </label>
+                      <textarea
+                        id="mensaje"
+                        class="form-control"
+                        rows="3"
+                        placeholder="Cantidad estimada de equipos, cursos, comentarios…"
+                      ></textarea>
+                    </div>
+
+                    <div
+                      class="col-12 d-flex flex-column flex-md-row justify-content-between align-items-md-center mt-3 gap-2"
+                    >
+                      <p class="small mb-0 text-main">
+                        * Respuesta en un máximo de 48 horas hábiles.
+                      </p>
+                      <button type="submit" class="btn btn-accent fw-semibold">
+                        Enviar inscripción
+                      </button>
+                    </div>
+
+                    <div id="formMessage" class="mt-3 small"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2"
+      >
+        <p class="small mb-0 text-main">© 2025 Copa Escolar Metropolitana.</p>
+        <p class="small mb-0 text-main">
+          Organización general · Santiago, Región Metropolitana.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JS propio -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
