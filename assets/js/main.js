@@ -37,12 +37,9 @@ if (form && formMessage) {
   });
 }
 
-// ==========================
 // CUENTA REGRESIVA CAMPEONATO
-// ==========================
-
 // FECHA Y HORA DE INICIO DEL CAMPEONATO
-const championshipStart = new Date("2025-11-21T09:00:00-03:00").getTime();
+const championshipStart = new Date("2025-11-28T09:00:00-03:00").getTime();
 
 const cdDays = document.getElementById("cd-days");
 const cdHours = document.getElementById("cd-hours");
